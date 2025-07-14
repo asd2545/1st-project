@@ -3,11 +3,11 @@ This project is a Python-based solution designed to scrape book data from http:/
 
 Project Structure
 
-    ├── GCP scrape_data.py
     ├── GCP clean_data.py
+    ├── GCP scrape_data.py
     ├── README.md
-    ├── scrape_data.py
-    └── clean_data.py
+    ├── clean_data.py
+    └── scrape_data.py
 
 - scrape_data.py: Contains the Python script for scraping book data locally. It fetches data from books.toscrape.com and saves it to raw_data.csv.
 - clean_data.py: Contains the Python script for cleaning locally stored raw_data.csv and saving the cleaned data to cleaned_data.csv.
