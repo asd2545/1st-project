@@ -12,7 +12,7 @@ import io
 logging.basicConfig(level=logging.INFO)
 
 @functions_framework.http
-def scrape_books_http(request):
+def scrape_books(request):
     logging.info("Received HTTP request to trigger book scraping.")
     
     gcs_bucket_name = 'run-sources-st-project-464315-asia-southeast1' 
