@@ -17,8 +17,7 @@ def scrape_books_by_category():
         print(f'Failed to fetch base page {base_url}: {e}')
         return
 
-    soup = BeautifulSoup(response.text, 'html.parser')
-
+    soup = BeautifulSoup(response.text, 'html.parser') 
     category_links = soup.select('ul.nav-list li a')
 
     if not category_links:
@@ -34,7 +33,6 @@ def scrape_books_by_category():
 
         relative_category_path = link['href']
         current_category_page_url = urljoin(base_url, relative_category_path)
-
 
         print(f"\n--- Scraping category: '{category_name}' from {current_category_page_url} ---")
         
@@ -96,7 +94,7 @@ def scrape_books_by_category():
 
     if all_scraped_data:
         df = pd.DataFrame(all_scraped_data)
-        output_filename = 'scraped_books_by_category.csv'
+        output_filename = 'raw_data.csv'
         try:
             df.to_csv(output_filename, index=False, encoding='utf-8')
             print(f"\nCSV file '{output_filename}' successfully created locally. Total books scraped: {len(df)}")
