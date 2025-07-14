@@ -1,18 +1,18 @@
 import pandas as pd
 import os
 
-SOURCE_FILE_NAME = 'raw_data.csv'
-CLEANED_FILE_NAME = 'cleaned_data.csv'
+source_file_name = 'raw_data.csv'
+cleaned_file_name = 'cleaned_data.csv'
 
 def clean_and_store_data_local():
-    print(f"Starting data cleaning process for {SOURCE_FILE_NAME} (local file)...")
+    print(f"Starting data cleaning process for {source_file_name} (local file)...")
 
     try:
-        if not os.path.exists(SOURCE_FILE_NAME):
-            raise FileNotFoundError(f"Source file not found: {SOURCE_FILE_NAME}")
+        if not os.path.exists(source_file_name):
+            raise FileNotFoundError(f"Source file not found: {source_file_name}")
 
-        df = pd.read_csv(SOURCE_FILE_NAME)
-        print(f"Successfully read {len(df)} rows from {SOURCE_FILE_NAME}.")
+        df = pd.read_csv(source_file_name)
+        print(f"Successfully read {len(df)} rows from {source_file_name}.")
 
         print("Applying data cleaning steps...")
 
@@ -43,8 +43,8 @@ def clean_and_store_data_local():
         print(df.head())
         print(f"\nFinal cleaned data rows: {len(df)}")
 
-        df.to_csv(CLEANED_FILE_NAME, index=False, encoding='utf-8')
-        print(f"Cleaned data successfully saved to {CLEANED_FILE_NAME}")
+        df.to_csv(cleaned_file_name, index=False, encoding='utf-8')
+        print(f"Cleaned data successfully saved to {cleaned_file_name}")
         return "Data cleaning successful!", 200
 
     except FileNotFoundError as e:
